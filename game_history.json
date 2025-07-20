@@ -1,0 +1,12 @@
+[
+  {
+    "game_type": "eye_tracking",
+    "timestamp": "2025-07-20 15:54:09",
+    "duration": 60.000765562057495,
+    "hits": 0,
+    "misses": 0,
+    "accuracy": 0.0,
+    "score": 0,
+    "avg_reaction_time": 0
+  }
+]

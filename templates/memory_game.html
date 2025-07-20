@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>记忆训练游戏 - 眼部健康大模型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+        .container { background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); margin-top: 40px; padding: 32px 24px 24px 24px; max-width: 400px; width: 100%; text-align: center; }
+        h1 { font-size: 2em; margin-bottom: 10px; background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #gameCanvas { background: #f7f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin: 18px 0 10px 0; display: block; margin-left: auto; margin-right: auto; }
+        .info { margin: 10px 0 18px 0; font-size: 1.1em; }
+        .btn { padding: 12px 28px; background: #667eea; color: #fff; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin: 0 8px; }
+        .btn:hover { background: #4a56a6; }
+        .result { margin-top: 18px; font-size: 1.2em; color: #2e7d32; }
+        .back-link { display: inline-block; margin-top: 18px; color: #667eea; text-decoration: underline; cursor: pointer; }
+        @media (max-width: 500px) { .container { padding: 12px 2vw; } #gameCanvas { width: 98vw; height: 98vw; max-width: 320px; max-height: 320px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>记忆训练游戏</h1>
+        <div class="info" id="gameInfo">点击“开始游戏”后，记住颜色点亮顺序并按顺序点击！</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div>
+            <button class="btn" id="startBtn">开始游戏</button>
+            <button class="btn" id="restartBtn" style="display:none;">再来一次</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="back-link" onclick="window.location.href='/'">← 返回主页</div>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const info = document.getElementById('gameInfo');
+        const resultDiv = document.getElementById('result');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        let running = false;
+        let sequence = [];
+        let userInput = [];
+        let round = 0;
+        let maxRounds = 8;
+        let colors = ['#f00','#0c0','#09f','#ff0'];
+        let colorRects = [];
+        let showing = false;
+        let score = 0;
+        function drawRects(highlightIdx=-1){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            colorRects = [];
+            for(let i=0;i<4;i++){
+                let x = 40 + i*55;
+                let y = 120;
+                ctx.beginPath();
+                ctx.arc(x+25,y+25,25,0,2*Math.PI);
+                ctx.fillStyle = (i===highlightIdx)?'#fff':colors[i];
+                ctx.fill();
+                ctx.strokeStyle = '#bbb';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                colorRects.push({x:x,y:y,color:colors[i]});
+            }
+        }
+        function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+        async function showSequence(){
+            showing = true;
+            for(let i=0;i<sequence.length;i++){
+                drawRects(sequence[i]);
+                await sleep(600);
+                drawRects();
+                await sleep(200);
+            }
+            showing = false;
+            info.textContent = `请按顺序点击颜色球（第${round}轮）`;
+        }
+        canvas.addEventListener('click',function(e){
+            if(!running||showing) return;
+            let rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+            for(let i=0;i<colorRects.length;i++){
+                let cx=colorRects[i].x+25,cy=colorRects[i].y+25;
+                if(Math.hypot(x-cx,y-cy)<=25){
+                    userInput.push(i);
+                    drawRects(i);
+                    setTimeout(drawRects,200);
+                    if(userInput.length===sequence.length){
+                        checkInput();
+                    }
+                    break;
+                }
+            }
+        });
+        function nextRound(){
+            if(round>=maxRounds){ endGame(); return; }
+            round++;
+            userInput = [];
+            sequence.push(Math.floor(Math.random()*4));
+            info.textContent = `记住颜色顺序（第${round}轮）...`;
+            showSequence();
+        }
+        function checkInput(){
+            for(let i=0;i<sequence.length;i++){
+                if(userInput[i]!==sequence[i]){
+                    endGame();
+                    return;
+                }
+            }
+            score++;
+            setTimeout(nextRound,500);
+        }
+        function startGame(){
+            running = true;
+            round = 0;
+            sequence = [];
+            userInput = [];
+            score = 0;
+            resultDiv.textContent = '';
+            startBtn.style.display = 'none';
+            restartBtn.style.display = 'none';
+            nextRound();
+        }
+        function endGame(){
+            running = false;
+            info.textContent = '游戏结束！';
+            resultDiv.textContent = `成绩：成功记忆${score}轮`;
+            restartBtn.style.display = 'inline-block';
+            // 可选：回传成绩到后端
+        }
+        startBtn.onclick = startGame;
+        restartBtn.onclick = startGame;
+        drawRects();
+    </script>
+</body>
+</html> 

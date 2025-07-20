@@ -1,0 +1,159 @@
+{
+  "timestamp": "2025-07-20 17:47:48",
+  "total_tests": 30,
+  "passed_tests": 25,
+  "failed_tests": 5,
+  "pass_rate": 83.33333333333334,
+  "results": {
+    "OpenCV导入": {
+      "status": "✅ PASS",
+      "message": "OpenCV模块导入成功",
+      "success": true
+    },
+    "MediaPipe导入": {
+      "status": "✅ PASS",
+      "message": "MediaPipe模块导入成功",
+      "success": true
+    },
+    "NumPy导入": {
+      "status": "✅ PASS",
+      "message": "NumPy模块导入成功",
+      "success": true
+    },
+    "PyQt6导入": {
+      "status": "✅ PASS",
+      "message": "PyQt6模块导入成功",
+      "success": true
+    },
+    "Tkinter导入": {
+      "status": "✅ PASS",
+      "message": "Tkinter模块导入成功",
+      "success": true
+    },
+    "桌宠智能体创建": {
+      "status": "✅ PASS",
+      "message": "桌宠智能体创建成功",
+      "success": true
+    },
+    "状态获取": {
+      "status": "✅ PASS",
+      "message": "获取到状态信息: 54字符",
+      "success": true
+    },
+    "活动检测": {
+      "status": "✅ PASS",
+      "message": "活动检测正常: 在使用电脑",
+      "success": true
+    },
+    "消息处理": {
+      "status": "✅ PASS",
+      "message": "消息响应正常: TestPet开心地向你打招呼：你好呀！...",
+      "success": true
+    },
+    "工具管理器": {
+      "status": "❌ FAIL",
+      "message": "工具管理器测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "眼部游戏工具": {
+      "status": "❌ FAIL",
+      "message": "眼部游戏工具测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "图像分析工具": {
+      "status": "✅ PASS",
+      "message": "图像分析工具创建成功",
+      "success": true
+    },
+    "模型文件-oct_scripted.pt": {
+      "status": "✅ PASS",
+      "message": "模型文件存在: oct_scripted.pt",
+      "success": true
+    },
+    "模型文件-best_model.pth": {
+      "status": "✅ PASS",
+      "message": "模型文件存在: best_model.pth",
+      "success": true
+    },
+    "模型文件-full_model.pth": {
+      "status": "✅ PASS",
+      "message": "模型文件存在: full_model.pth",
+      "success": true
+    },
+    "视力检测工具": {
+      "status": "❌ FAIL",
+      "message": "视力检测工具测试失败: \"VisionTestTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "气泡菜单模块": {
+      "status": "✅ PASS",
+      "message": "气泡菜单模块导入成功",
+      "success": true
+    },
+    "升级机器模块": {
+      "status": "✅ PASS",
+      "message": "升级机器模块导入成功",
+      "success": true
+    },
+    "对战对话框模块": {
+      "status": "✅ PASS",
+      "message": "对战对话框模块导入成功",
+      "success": true
+    },
+    "桌宠组件模块": {
+      "status": "✅ PASS",
+      "message": "桌宠组件模块导入成功",
+      "success": true
+    },
+    "智能体系统": {
+      "status": "✅ PASS",
+      "message": "智能体系统创建成功",
+      "success": true
+    },
+    "工具集合": {
+      "status": "✅ PASS",
+      "message": "工具集合包含5个工具",
+      "success": true
+    },
+    "视力数据CSV": {
+      "status": "✅ PASS",
+      "message": "视力数据文件正常，包含30条记录",
+      "success": true
+    },
+    "用户习惯JSON": {
+      "status": "✅ PASS",
+      "message": "用户习惯文件正常，包含7个键",
+      "success": true
+    },
+    "宠物状态JSON": {
+      "status": "✅ PASS",
+      "message": "宠物状态文件正常，包含7个属性",
+      "success": true
+    },
+    "摄像头访问": {
+      "status": "❌ FAIL",
+      "message": "摄像头测试失败: name 'cv2' is not defined",
+      "success": false
+    },
+    "面部网格模型": {
+      "status": "✅ PASS",
+      "message": "面部网格模型初始化成功",
+      "success": true
+    },
+    "手势识别模型": {
+      "status": "✅ PASS",
+      "message": "手势识别模型初始化成功",
+      "success": true
+    },
+    "异步操作": {
+      "status": "✅ PASS",
+      "message": "异步工具执行测试完成",
+      "success": true
+    },
+    "文件读取": {
+      "status": "❌ FAIL",
+      "message": "文件读取功能正常",
+      "success": false
+    }
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>专注力训练游戏 - 眼部健康大模型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .container {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            margin-top: 40px;
+            padding: 32px 24px 24px 24px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #gameCanvas {
+            background: #f7f7fa;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin: 18px 0 10px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .info {
+            margin: 10px 0 18px 0;
+            font-size: 1.1em;
+        }
+        .btn {
+            padding: 12px 28px;
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 0 8px;
+        }
+        .btn:hover {
+            background: #4a56a6;
+        }
+        .result {
+            margin-top: 18px;
+            font-size: 1.2em;
+            color: #2e7d32;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #667eea;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        @media (max-width: 500px) {
+            .container { padding: 12px 2vw; }
+            #gameCanvas { width: 98vw; height: 98vw; max-width: 320px; max-height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>专注力训练游戏</h1>
+        <div class="info" id="gameInfo">点击“开始游戏”后，快速找到并点击目标数字！</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div>
+            <button class="btn" id="startBtn">开始游戏</button>
+            <button class="btn" id="restartBtn" style="display:none;">再来一次</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="back-link" onclick="window.location.href='/'">← 返回主页</div>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const info = document.getElementById('gameInfo');
+        const resultDiv = document.getElementById('result');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        let numbers = [];
+        let target = 1;
+        let gridSize = 3;
+        let cellSize = 100;
+        let running = false;
+        let hits = 0;
+        let misses = 0;
+        let round = 0;
+        let startTime = 0;
+        let totalTime = 0;
+        let maxRounds = 10;
+
+        function drawGrid() {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.strokeStyle = '#bbb';
+            for(let i=1;i<gridSize;i++){
+                ctx.beginPath();
+                ctx.moveTo(i*cellSize,0);
+                ctx.lineTo(i*cellSize,canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0,i*cellSize);
+                ctx.lineTo(canvas.width,i*cellSize);
+                ctx.stroke();
+            }
+            ctx.font = '32px Segoe UI';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            for(let i=0;i<numbers.length;i++){
+                let row = Math.floor(i/gridSize);
+                let col = i%gridSize;
+                let x = col*cellSize+cellSize/2;
+                let y = row*cellSize+cellSize/2;
+                ctx.fillStyle = (numbers[i]===target)?'#667eea':'#333';
+                ctx.fillText(numbers[i],x,y);
+            }
+        }
+
+        function shuffle(arr) {
+            for(let i=arr.length-1;i>0;i--){
+                let j=Math.floor(Math.random()*(i+1));
+                [arr[i],arr[j]]=[arr[j],arr[i]];
+            }
+        }
+
+        function nextRound() {
+            if(round>=maxRounds){
+                endGame();
+                return;
+            }
+            round++;
+            numbers = [1,2,3,4,5,6,7,8,9];
+            shuffle(numbers);
+            let possibleTargets = numbers.filter(n=>n!==target);
+            target = possibleTargets[Math.floor(Math.random()*possibleTargets.length)];
+            info.textContent = `第${round}轮：请点击数字 ${target}`;
+            drawGrid();
+        }
+
+        function getCellFromXY(x,y) {
+            let col = Math.floor(x/cellSize);
+            let row = Math.floor(y/cellSize);
+            return row*gridSize+col;
+        }
+
+        canvas.addEventListener('click',function(e){
+            if(!running) return;
+            let rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+            let idx = getCellFromXY(x,y);
+            if(numbers[idx]===target){
+                hits++;
+                nextRound();
+            }else{
+                misses++;
+                info.textContent = `点错了！请点击数字 ${target}`;
+            }
+        });
+
+        function startGame(){
+            running = true;
+            hits = 0;
+            misses = 0;
+            round = 0;
+            totalTime = 0;
+            resultDiv.textContent = '';
+            startBtn.style.display = 'none';
+            restartBtn.style.display = 'none';
+            startTime = Date.now();
+            nextRound();
+        }
+
+        function endGame(){
+            running = false;
+            totalTime = Math.round((Date.now()-startTime)/1000);
+            info.textContent = '游戏结束！';
+            resultDiv.textContent = `成绩：正确${hits}次，失误${misses}次，总用时${totalTime}秒`;
+            restartBtn.style.display = 'inline-block';
+            // 可选：回传成绩到后端
+            // fetch('/api/training/result', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({game:'focus',hits,misses,totalTime})});
+        }
+
+        startBtn.onclick = startGame;
+        restartBtn.onclick = startGame;
+        drawGrid();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,28 @@
+# 眼部健康大模型配置文件 - 适配本地DeepSeek模型
+
+[llm]
+default = { model = "deepseek-chat", base_url = "http://localhost:11434/v1", api_key = "ollama", max_tokens = 4096, temperature = 0.7, api_type = "Ollama", api_version = "1.0" }
+
+[eye_health]
+vision_test = { enabled = true, timeout = 300 }
+advanced_vision_test = { enabled = true, timeout = 600 }
+vision_training = { enabled = true, game_duration = 300 }
+vision_analytics = { enabled = true, report_interval = 7 }
+
+system = { auto_save = true, backup_interval = 24, max_history = 1000 }
+ui = { language = "zh-CN", theme = "light", notifications = true }
+storage = { vision_reports_dir = "vision_reports", analytics_reports_dir = "analytics_reports", training_data_dir = "training_data", user_profiles_dir = "user_profiles" }
+models = { vision_detection_model = "best_model.pth", image_processing_model = "full_model.pth", api_model = "deepseek-chat" }
+training = { eye_tracking = { duration = 300, difficulty = "adaptive" }, focus_training = { duration = 240, difficulty = "adaptive" }, reaction_training = { duration = 180, difficulty = "adaptive" }, memory_training = { duration = 300, difficulty = "adaptive" }, color_matching = { duration = 240, difficulty = "adaptive" } }
+analytics = { trend_analysis = { enabled = true, window_size = 30 }, performance_analysis = { enabled = true, min_games = 5 }, risk_assessment = { enabled = true, threshold = 0.7 }, personalized_insights = { enabled = true, update_interval = 7 } }
+consultation = { symptom_analysis = { enabled = true, confidence_threshold = 0.8 }, recommendation_engine = { enabled = true, max_recommendations = 5 }, emergency_alerts = { enabled = true, severity_levels = ["low", "medium", "high"] } }
+logging = { level = "INFO", file = "eye_health_system.log", max_size = "10MB", backup_count = 5 }
+security = { data_encryption = true, user_authentication = false, api_rate_limiting = true, max_requests_per_minute = 60 }
+
+[openmanus]
+agent = { max_steps = 20, duplicate_threshold = 2, temperature = 0.7 }
+tools = { vision_test = { enabled = true, timeout = 300 }, advanced_vision_test = { enabled = true, timeout = 600 }, vision_training = { enabled = true, timeout = 300 }, vision_analytics = { enabled = true, timeout = 120 }, eye_health_consultation = { enabled = true, timeout = 60 } }
+
+[local_model]
+ollama = { base_url = "http://localhost:11434", model = "deepseek-chat", api_key = "ollama", timeout = 300 }
+model_params = { temperature = 0.7, max_tokens = 4096, top_p = 0.9, frequency_penalty = 0.0, presence_penalty = 0.0 } 

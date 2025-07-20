@@ -1,0 +1,114 @@
+{
+  "report_date": "2025-07-20 16:49:04",
+  "vision_trends": {
+    "error": "没有视力检测数据"
+  },
+  "game_performance": {
+    "eye_tracking": {
+      "total_games": 1,
+      "avg_score": 0.0,
+      "best_score": 0,
+      "avg_accuracy": 0.0,
+      "avg_reaction_time": 0,
+      "improvement_trend": {
+        "improvement_rate": 0,
+        "status": "insufficient_data"
+      },
+      "recent_performance": {
+        "trend": "insufficient_data"
+      }
+    }
+  },
+  "personalized_insights": {
+    "vision_health": {
+      "status": "no_data",
+      "message": "没有视力数据"
+    },
+    "training_recommendations": [
+      "建议多练习eye_tracking游戏以提高准确率",
+      "建议定期进行视力检查，至少每3个月一次",
+      "保持良好的用眼习惯，避免长时间连续用眼"
+    ],
+    "risk_assessment": {
+      "risk_level": "medium",
+      "risks": [
+        "eye_tracking游戏表现较差，可能存在视觉处理问题"
+      ],
+      "recommendations": [
+        "建议增加视力训练频率",
+        "建议定期进行视力检查",
+        "建议改善用眼环境，如调整屏幕亮度"
+      ]
+    },
+    "improvement_goals": {
+      "goals": [],
+      "timeline": "no_data"
+    }
+  },
+  "recommendations": {
+    "immediate_actions": [
+      "开始记录每日用眼时间和视力训练情况",
+      "设置定时提醒，每30分钟休息5分钟"
+    ],
+    "long_term_plan": {
+      "month_1": [
+        "建立规律的视力训练习惯",
+        "改善用眼环境",
+        "开始记录视力变化"
+      ],
+      "month_3": [
+        "评估训练效果",
+        "调整训练计划",
+        "考虑专业指导"
+      ],
+      "month_6": [
+        "全面视力评估",
+        "制定新的训练目标",
+        "建立长期维护计划"
+      ]
+    },
+    "training_schedule": {
+      "daily_training": {
+        "duration": "15-20分钟",
+        "activities": [
+          "视力训练游戏",
+          "眼动追踪练习",
+          "专注力训练"
+        ],
+        "frequency": "每天1-2次"
+      },
+      "weekly_assessment": {
+        "vision_test": "每周进行一次视力检测",
+        "game_performance": "每周评估游戏表现",
+        "progress_tracking": "记录训练进度和改善情况"
+      },
+      "monthly_review": {
+        "comprehensive_analysis": "每月进行综合视力分析",
+        "plan_adjustment": "根据分析结果调整训练计划",
+        "goal_review": "回顾和更新改进目标"
+      }
+    },
+    "monitoring_plan": {
+      "daily_monitoring": [
+        "记录用眼时间",
+        "记录视力训练情况",
+        "记录眼疲劳程度"
+      ],
+      "weekly_monitoring": [
+        "进行视力检测",
+        "评估游戏表现",
+        "分析训练效果"
+      ],
+      "monthly_monitoring": [
+        "综合视力分析",
+        "生成详细报告",
+        "调整训练策略"
+      ],
+      "alert_conditions": [
+        "视力下降超过0.2",
+        "连续3次游戏表现下降",
+        "出现眼疲劳症状"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+from abc import ABC, abstractmethod
+from typing import Optional
+from pydantic import Field
+from src.openmanus_agent.base import BaseAgent
+from src.openmanus_agent.llm_ollama import OllamaChatCompletion
+from src.openmanus_agent.schema import AgentState, Memory
+
+class ReActAgent(BaseAgent, ABC):
+    name: str
+    description: Optional[str] = None
+    system_prompt: Optional[str] = None
+    next_step_prompt: Optional[str] = None
+    llm: Optional[OllamaChatCompletion] = Field(default_factory=OllamaChatCompletion)
+    memory: Memory = Field(default_factory=Memory)
+    state: AgentState = AgentState.IDLE
+    max_steps: int = 10
+    current_step: int = 0
+    @abstractmethod
+    async def think(self) -> bool:
+        pass
+    @abstractmethod
+    async def act(self) -> str:
+        pass
+    async def step(self) -> str:
+        should_act = await self.think()
+        if not should_act:
+            return "Thinking complete - no action needed"
+        return await self.act() 

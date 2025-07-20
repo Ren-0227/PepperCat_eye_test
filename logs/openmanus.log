@@ -1,0 +1,74 @@
+2025-07-20 15:43:36,743 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 15:43:36,744 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 15:43:36,745 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 15:43:36,745 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 15:43:36,745 - openmanus - INFO - Web系统初始化完成
+2025-07-20 15:43:36,745 - openmanus - INFO - Web系统初始化完成
+2025-07-20 15:44:12,482 - openmanus - INFO - 处理用户请求: 我的眼睛有点看不清
+2025-07-20 15:44:12,487 - openmanus - INFO - 开始执行眼部健康任务: 我的眼睛有点看不清
+2025-07-20 15:44:12,490 - openmanus - INFO - Executing step 1/10
+2025-07-20 15:44:12,795 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:12,795 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:14,071 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:14,072 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:16,264 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:16,264 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:16,269 - openmanus - ERROR - Step execution failed: RetryError[<Future at 0x26518835700 state=finished raised Exception>]
+2025-07-20 15:44:16,274 - openmanus - ERROR - 眼部健康任务执行失败: assistant_message() got an unexpected keyword argument 'base64_image'
+2025-07-20 15:50:47,896 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 15:50:47,901 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 15:50:47,901 - openmanus - INFO - Web系统初始化完成
+2025-07-20 15:50:58,818 - openmanus - ERROR - 训练游戏出错: 'VisionTrainingGame' object has no attribute 'run_eye_tracking_game'
+2025-07-20 15:52:46,107 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 15:52:46,107 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 15:52:46,108 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:01:02,758 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:01:02,759 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:01:02,759 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:04:05,114 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:04:05,114 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:04:05,114 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:04:21,625 - openmanus - ERROR - 视力检测出错: 无法打开摄像头，请检查摄像头连接和权限。
+2025-07-20 16:05:49,553 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:05:49,553 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:05:49,554 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:06:06,244 - openmanus - ERROR - 视力检测出错: 无法打开摄像头，请检查摄像头连接和权限。
+2025-07-20 16:08:26,023 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:08:26,023 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:08:26,023 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:12:39,800 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:12:39,800 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:12:39,800 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:13:21,823 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:13:21,823 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:13:21,823 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:14:16,119 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:14:16,121 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:14:16,122 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:26:56,223 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:26:56,223 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:26:56,223 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:32:40,970 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:32:40,970 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:32:40,971 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:34:03,787 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:34:03,787 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:34:03,787 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:37:51,888 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:37:51,889 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:37:51,889 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:43:39,026 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:43:39,026 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:43:39,026 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:47:52,678 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:47:52,680 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:47:52,681 - openmanus - INFO - Web系统初始化完成
+2025-07-20 16:58:04,527 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 16:58:04,528 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 16:58:04,528 - openmanus - INFO - Web系统初始化完成
+2025-07-20 17:01:39,477 - openmanus - INFO - 正在初始化眼部健康大模型系统...
+2025-07-20 17:01:39,477 - openmanus - INFO - 眼部健康大模型系统初始化完成
+2025-07-20 17:01:39,478 - openmanus - INFO - Web系统初始化完成

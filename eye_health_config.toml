@@ -1,0 +1,86 @@
+# 眼部健康大模型配置文件
+
+# 全局LLM配置
+[llm]
+model = "gpt-4o"
+base_url = "https://api.openai.com/v1"
+api_key = "your-api-key-here"  # 请替换为您的API密钥
+max_tokens = 4096
+temperature = 0.0
+
+# 眼部健康专用配置
+[eye_health]
+# 视力检测配置
+vision_test = { enabled = true, timeout = 300 }
+advanced_vision_test = { enabled = true, timeout = 600 }
+vision_training = { enabled = true, game_duration = 300 }
+vision_analytics = { enabled = true, report_interval = 7 }
+
+# 系统配置
+system = { 
+    auto_save = true, 
+    backup_interval = 24,  # 小时
+    max_history = 1000 
+}
+
+# 用户界面配置
+ui = {
+    language = "zh-CN",
+    theme = "light",
+    notifications = true
+}
+
+# 数据存储配置
+storage = {
+    vision_reports_dir = "vision_reports",
+    analytics_reports_dir = "analytics_reports",
+    training_data_dir = "training_data",
+    user_profiles_dir = "user_profiles"
+}
+
+# 模型配置
+models = {
+    vision_detection_model = "best_model.pth",
+    image_processing_model = "full_model.pth",
+    api_model = "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+}
+
+# 训练配置
+training = {
+    eye_tracking = { duration = 300, difficulty = "adaptive" },
+    focus_training = { duration = 240, difficulty = "adaptive" },
+    reaction_training = { duration = 180, difficulty = "adaptive" },
+    memory_training = { duration = 300, difficulty = "adaptive" },
+    color_matching = { duration = 240, difficulty = "adaptive" }
+}
+
+# 分析配置
+analytics = {
+    trend_analysis = { enabled = true, window_size = 30 },
+    performance_analysis = { enabled = true, min_games = 5 },
+    risk_assessment = { enabled = true, threshold = 0.7 },
+    personalized_insights = { enabled = true, update_interval = 7 }
+}
+
+# 咨询配置
+consultation = {
+    symptom_analysis = { enabled = true, confidence_threshold = 0.8 },
+    recommendation_engine = { enabled = true, max_recommendations = 5 },
+    emergency_alerts = { enabled = true, severity_levels = ["low", "medium", "high"] }
+}
+
+# 日志配置
+logging = {
+    level = "INFO",
+    file = "eye_health_system.log",
+    max_size = "10MB",
+    backup_count = 5
+}
+
+# 安全配置
+security = {
+    data_encryption = true,
+    user_authentication = false,  # 可选
+    api_rate_limiting = true,
+    max_requests_per_minute = 60
+} 

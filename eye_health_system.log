@@ -1,0 +1,388 @@
+2025-07-20 15:43:36,743 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 15:43:36,745 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:43:36,745 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:43:36,745 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:43:36,745 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:43:36,756 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 15:43:36,756 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 15:43:36,756 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 15:43:54,532 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:43:54] "GET / HTTP/1.1" 200 -
+2025-07-20 15:43:54,572 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:43:54] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:43:54,785 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:43:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:43:55,026 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:43:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-20 15:44:12,482 - openmanus - INFO - ´¦ÀíÓÃ»§ÇëÇó: ÎÒµÄÑÛ¾¦ÓÐµã¿´²»Çå
+2025-07-20 15:44:12,487 - openmanus - INFO - ¿ªÊ¼Ö´ÐÐÑÛ²¿½¡¿µÈÎÎñ: ÎÒµÄÑÛ¾¦ÓÐµã¿´²»Çå
+2025-07-20 15:44:12,490 - openmanus - INFO - Executing step 1/10
+2025-07-20 15:44:12,795 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:12,795 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:14,071 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:14,072 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:16,264 - openmanus - ERROR - Tool API request failed: 404 - {"error":{"message":"model \"deepseek-chat\" not found, try pulling it first","type":"api_error","param":null,"code":null}}
+
+2025-07-20 15:44:16,264 - openmanus - ERROR - Tool LLM request failed: Tool API request failed: 404
+2025-07-20 15:44:16,269 - openmanus - ERROR - Step execution failed: RetryError[<Future at 0x26518835700 state=finished raised Exception>]
+2025-07-20 15:44:16,274 - openmanus - ERROR - ÑÛ²¿½¡¿µÈÎÎñÖ´ÐÐÊ§°Ü: assistant_message() got an unexpected keyword argument 'base64_image'
+2025-07-20 15:44:16,280 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:16] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:44:16,290 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:44:25,122 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:25] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:44:43,006 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:43] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:44:43,329 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:43] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:44:54,803 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:44:54] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:45:01,778 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:01] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:45:02,040 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:45:17,785 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:17] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:45:18,111 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:45:24,793 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:24] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:45:25,769 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:25] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:45:26,017 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:45:55,006 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:45:55] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:46:25,308 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:46:25] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:46:55,007 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:46:55] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:47:25,329 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:47:25] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:48:26,309 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:48:26] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:49:27,296 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:49:27] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:50:28,310 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:28] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:50:47,896 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 15:50:47,901 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:50:47,901 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:50:47,910 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 15:50:47,910 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 15:50:53,847 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:53] "GET / HTTP/1.1" 200 -
+2025-07-20 15:50:53,872 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:53] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:50:54,105 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:50:58,818 - openmanus - ERROR - ÑµÁ·ÓÎÏ·³ö´í: 'VisionTrainingGame' object has no attribute 'run_eye_tracking_game'
+2025-07-20 15:50:58,827 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:58] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:50:58,843 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:50:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:51:25,310 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:51:25] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:51:55,009 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:51:55] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:52:25,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:52:25] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:52:46,107 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 15:52:46,107 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:52:46,108 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 15:52:46,117 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 15:52:46,117 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 15:52:48,735 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:52:48] "GET / HTTP/1.1" 200 -
+2025-07-20 15:52:48,763 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:52:48] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:52:48,992 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:52:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:53:19,999 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:53:19] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:53:50,293 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:53:50] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:54:09,287 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:54:09] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 15:54:09,608 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:54:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 15:54:19,995 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:54:19] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:54:50,308 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:54:50] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:55:19,992 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:55:19] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:55:50,294 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:55:50] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:56:19,996 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:56:19] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:56:50,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:56:50] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:57:20,000 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:57:20] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:58:21,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:58:21] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 15:59:22,315 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 15:59:22] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:00:23,308 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:00:23] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:01:02,758 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:01:02,759 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:01:02,759 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:01:02,787 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:01:02,787 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:01:05,781 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:05] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:01:07,137 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:07] "GET / HTTP/1.1" 200 -
+2025-07-20 16:01:07,437 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:07] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:01:07,757 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:09,392 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:09] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:01:09,709 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:13,378 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:13] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:01:13,696 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:14,758 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:14] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:01:15,093 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:15,592 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:15] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:01:15,925 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:23,847 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:23] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:01:24,168 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:01:38,000 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:01:38] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:02:07,997 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:02:07] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:02:19,610 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:02:19] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:02:19,972 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:02:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:02:37,773 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:02:37] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:03:08,090 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:03:08] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:03:38,003 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:03:38] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:04:05,114 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:04:05,114 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:04:05,114 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:04:05,124 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:04:05,124 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:04:07,822 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:07] "GET / HTTP/1.1" 200 -
+2025-07-20 16:04:07,826 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:07] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:04:08,070 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:08] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:04:08,153 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:12,000 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:12] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:12,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:14,289 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:14] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:14,611 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:15,872 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:15] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:16,199 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:17,933 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:17] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:18,252 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:21,625 - openmanus - ERROR - ÊÓÁ¦¼ì²â³ö´í: ÎÞ·¨´ò¿ªÉãÏñÍ·£¬Çë¼ì²éÉãÏñÍ·Á¬½ÓºÍÈ¨ÏÞ¡£
+2025-07-20 16:04:21,631 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:21] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:21,952 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:04:38,486 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:38] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:04:42,214 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:42] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:04:42,620 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:04:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:05:09,311 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:09] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:05:49,553 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:05:49,553 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:05:49,554 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:05:49,562 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:05:49,564 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:05:52,399 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:52] "GET / HTTP/1.1" 200 -
+2025-07-20 16:05:52,490 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:52] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:05:52,622 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:05:56,135 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:56] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:05:56,378 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:05:58,898 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:58] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:05:59,225 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:05:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:06:03,707 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:03] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:06:04,035 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:06:06,244 - openmanus - ERROR - ÊÓÁ¦¼ì²â³ö´í: ÎÞ·¨´ò¿ªÉãÏñÍ·£¬Çë¼ì²éÉãÏñÍ·Á¬½ÓºÍÈ¨ÏÞ¡£
+2025-07-20 16:06:06,248 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:06] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:06:06,583 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:06:13,421 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:13] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:06:13,747 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:06:23,306 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:23] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:06:36,695 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:06:36] "GET /eye_tracking_game HTTP/1.1" 200 -
+2025-07-20 16:07:01,334 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:07:01] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:07:03,185 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:07:03] "GET /eye_tracking_game HTTP/1.1" 200 -
+2025-07-20 16:07:05,568 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:07:05] "[33mGET /focus_training_game HTTP/1.1[0m" 404 -
+2025-07-20 16:08:26,023 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:08:26,023 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:08:26,023 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:08:26,032 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:08:26,032 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:09:33,538 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:33] "GET / HTTP/1.1" 200 -
+2025-07-20 16:09:33,565 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:33] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:09:33,793 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:09:38,839 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:38] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:09:39,103 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:09:41,135 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:41] "[33mGET /reaction_training_game HTTP/1.1[0m" 404 -
+2025-07-20 16:09:45,650 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:45] "GET /focus_training_game HTTP/1.1" 200 -
+2025-07-20 16:09:57,164 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:57] "GET / HTTP/1.1" 200 -
+2025-07-20 16:09:57,466 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:57] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:09:57,791 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:09:57] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:10:12,502 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:10:12] "[33mGET /memory_game HTTP/1.1[0m" 404 -
+2025-07-20 16:10:27,814 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:10:27] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:10:58,309 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:10:58] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:11:07,212 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:07] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:11:09,550 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:09] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:11:28,009 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:28] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:11:47,138 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:47] "GET / HTTP/1.1" 200 -
+2025-07-20 16:11:47,167 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:47] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:11:47,401 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:11:50,861 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:11:50] "[33mGET /reaction_training_game HTTP/1.1[0m" 404 -
+2025-07-20 16:12:39,800 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:12:39,800 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:12:39,800 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:12:39,814 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:12:39,814 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:12:43,987 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:12:43] "GET / HTTP/1.1" 200 -
+2025-07-20 16:12:44,028 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:12:44] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:12:44,238 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:12:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:12:46,845 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:12:46] "GET /reaction_training_game HTTP/1.1" 200 -
+2025-07-20 16:12:49,907 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:12:49] "GET /memory_game HTTP/1.1" 200 -
+2025-07-20 16:13:21,823 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:13:21,823 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:13:21,823 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:13:21,831 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:13:21,831 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:13:45,305 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:13:45] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:14:16,119 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:14:16,121 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:14:16,122 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:14:16,167 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:14:16,168 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:14:16,308 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:14:16] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:14:45,000 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:14:45] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:15:15,307 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:15] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:15:33,155 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:33] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:15:35,019 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:35] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:15:35,438 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:35] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:15:35,914 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:35] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:15:36,077 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:36] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:15:45,003 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:15:45] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:16:15,316 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:16:15] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:16:45,016 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:16:45] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:17:32,299 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:17:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:18:32,328 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:18:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:19:32,012 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:19:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:20:32,320 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:20:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:21:32,005 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:21:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:22:32,316 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:22:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:23:32,008 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:23:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:24:32,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:24:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:25:31,995 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:25:31] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:26:32,314 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:26:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:26:56,223 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:26:56,223 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:26:56,223 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:26:56,236 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:26:56,236 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:26:58,556 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:26:58] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:27:03,171 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:03] "GET / HTTP/1.1" 200 -
+2025-07-20 16:27:03,464 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:03] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:27:03,804 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:27:12,294 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:12] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:27:13,539 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:13] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:27:34,003 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:27:34] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:28:04,319 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:28:04] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:28:34,006 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:28:34] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:29:04,320 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:29:04] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:29:33,997 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:29:33] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:30:04,314 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:30:04] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:30:34,005 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:30:34] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:31:32,314 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:31:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:32:40,970 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:32:40,970 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:32:40,971 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:32:40,985 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:32:40,986 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:32:41,062 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:32:41] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:32:44,571 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:32:44] "GET / HTTP/1.1" 200 -
+2025-07-20 16:32:44,865 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:32:44] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:32:45,181 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:32:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:32:52,143 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:32:52] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:33:16,307 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:33:16] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:33:45,998 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:33:45] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:34:03,787 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:34:03,787 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:34:03,787 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:34:03,795 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:34:03,795 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:34:03,929 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:03] "GET / HTTP/1.1" 200 -
+2025-07-20 16:34:04,170 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:04] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:34:04,183 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:34:10,366 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:10] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:34:11,019 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:11] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:34:11,479 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:11] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:34:34,995 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:34:34] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:35:05,311 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:35:05] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:37:51,888 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:37:51,889 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:37:51,889 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:37:51,906 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:37:51,906 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:38:32,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:38:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:39:32,007 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:39:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:40:32,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:40:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:41:32,008 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:41:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:42:32,304 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:42:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:43:32,004 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:43:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:43:39,026 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:43:39,026 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:43:39,026 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:43:39,033 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:43:39,033 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:44:32,311 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:44:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:47:52,678 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:47:52,680 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:47:52,681 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:47:52,691 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:47:52,691 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:47:59,485 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:47:59] "GET / HTTP/1.1" 200 -
+2025-07-20 16:47:59,517 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:47:59] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:47:59,969 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:47:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:47:59,969 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:47:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-20 16:48:02,954 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:02] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:48:03,204 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:48:16,029 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:16] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:48:17,263 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:17] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:48:17,447 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:17] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:48:17,747 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:17] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:48:30,313 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:30] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:48:50,885 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:48:50] "POST /api/image/recognition HTTP/1.1" 200 -
+2025-07-20 16:49:00,283 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:49:00] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:49:04,208 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:49:04] "POST /api/chat HTTP/1.1" 200 -
+2025-07-20 16:49:04,545 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:49:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-20 16:49:30,012 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:49:30] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:50:00,320 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:50:00] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:50:29,996 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:50:29] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:51:00,305 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:51:00] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:51:29,995 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:51:29] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:52:31,321 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:52:31] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:53:32,307 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:53:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:54:32,008 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:54:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:55:32,315 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:55:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:56:31,994 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:56:31] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:57:32,303 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:57:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:58:04,527 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 16:58:04,528 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:58:04,528 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 16:58:04,543 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 16:58:04,543 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 16:58:32,004 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:58:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 16:59:32,326 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 16:59:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:00:32,022 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:00:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:01:32,316 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:01:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:01:39,477 - openmanus - INFO - ÕýÔÚ³õÊ¼»¯ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³...
+2025-07-20 17:01:39,477 - openmanus - INFO - ÑÛ²¿½¡¿µ´óÄ£ÐÍÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 17:01:39,478 - openmanus - INFO - WebÏµÍ³³õÊ¼»¯Íê³É
+2025-07-20 17:01:39,490 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.103:5000
+2025-07-20 17:01:39,490 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-20 17:02:32,011 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:02:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:03:32,322 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:03:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:04:32,010 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:04:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:05:32,325 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:05:32] "GET /api/system/status HTTP/1.1" 200 -
+2025-07-20 17:06:00,000 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 17:06:00] "GET /api/system/status HTTP/1.1" 200 -

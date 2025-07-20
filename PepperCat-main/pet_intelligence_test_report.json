@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-07-20 17:57:17",
+  "total_tests": 11,
+  "passed_tests": 1,
+  "failed_tests": 10,
+  "pass_rate": 9.090909090909092,
+  "results": {
+    "命令解析系统": {
+      "status": "❌ FAIL",
+      "message": "命令解析系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "游戏命令系统": {
+      "status": "❌ FAIL",
+      "message": "游戏命令系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "健康咨询系统": {
+      "status": "❌ FAIL",
+      "message": "健康咨询系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "数据分析系统": {
+      "status": "❌ FAIL",
+      "message": "数据分析系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "视力检测系统": {
+      "status": "❌ FAIL",
+      "message": "视力检测系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "图像分析系统": {
+      "status": "❌ FAIL",
+      "message": "图像分析系统测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    },
+    "聊天对话框创建": {
+      "status": "✅ PASS",
+      "message": "聊天对话框创建成功",
+      "success": true
+    },
+    "消息处理-1": {
+      "status": "❌ FAIL",
+      "message": "消息'我想玩记忆游戏'处理失败: 'PetChatDialog' object has no attribute 'input_field'",
+      "success": false
+    },
+    "消息处理-2": {
+      "status": "❌ FAIL",
+      "message": "消息'我的眼睛红肿应该怎么办'处理失败: 'PetChatDialog' object has no attribute 'input_field'",
+      "success": false
+    },
+    "消息处理-3": {
+      "status": "❌ FAIL",
+      "message": "消息'读取我的csv文件，然后分析做可视化'处理失败: 'PetChatDialog' object has no attribute 'input_field'",
+      "success": false
+    },
+    "完整工作流程": {
+      "status": "❌ FAIL",
+      "message": "完整工作流程测试失败: \"EyeGamesTool\" object has no field \"tkinter_thread\"",
+      "success": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-07-20 17:54:06",
+  "total_tests": 23,
+  "passed_tests": 23,
+  "failed_tests": 0,
+  "pass_rate": 100.0,
+  "results": {
+    "CSV文件读取": {
+      "status": "✅ PASS",
+      "message": "成功读取30行数据",
+      "success": true
+    },
+    "数据结构检查": {
+      "status": "✅ PASS",
+      "message": "包含所有预期列: 7列",
+      "success": true
+    },
+    "数据类型检查": {
+      "status": "✅ PASS",
+      "message": "数值列数据类型正确",
+      "success": true
+    },
+    "数据完整性": {
+      "status": "✅ PASS",
+      "message": "无缺失数据",
+      "success": 

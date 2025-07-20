@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>眼动追踪小游戏</title>
+    <style>
+        body { font-family: Arial; background: #f0f0f0; text-align: center; }
+        #gameCanvas { background: #fff; border: 2px solid #667eea; margin-top: 30px; }
+        #score { font-size: 1.2em; margin: 20px; }
+        #startBtn { padding: 10px 30px; font-size: 1.1em; background: #667eea; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>眼动追踪小游戏</h2>
+    <div id="score">命中: 0 | 失误: 0 | 时间: 0s</div>
+    <button id="startBtn">开始游戏</button>
+    <canvas id="gameCanvas" width="640" height="480"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreDiv = document.getElementById('score');
+        const startBtn = document.getElementById('startBtn');
+        let playing = false, hits = 0, misses = 0, startTime = 0, timer = null, gameDuration = 60;
+        let target = {x: 320, y: 240, r: 20};
+        let mouse = {x: 320, y: 240};
+
+        function draw() {
+            ctx.clearRect(0, 0, 640, 480);
+            // 目标点
+            ctx.beginPath();
+            ctx.arc(target.x, target.y, target.r, 0, 2 * Math.PI);
+            ctx.fillStyle = '#0c0';
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#fff';
+            ctx.arc(target.x, target.y, target.r + 5, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            // 鼠标/眼动点
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = '#09f';
+            ctx.fill();
+
+            // 轨迹线
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            ctx.lineTo(target.x, target.y);
+            ctx.strokeStyle = '#ff0';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        function randomTarget() {
+            target.x = Math.random() * 540 + 50;
+            target.y = Math.random() * 380 + 50;
+        }
+
+        function updateGame() {
+            let elapsed = Math.floor((Date.now() - startTime) / 1000);
+            scoreDiv.textContent = `命中: ${hits} | 失误: ${misses} | 时间: ${elapsed}s`;
+            // 2%概率移动目标
+            if (Math.random() < 0.02) randomTarget();
+            // 判断是否命中
+            let dist = Math.hypot(mouse.x - target.x, mouse.y - target.y);
+            if (dist < target.r + 30) {
+                hits++;
+                randomTarget();
+            } else if (dist > 200) {
+                misses++;
+            }
+            draw();
+            if (elapsed < gameDuration) {
+                timer = setTimeout(updateGame, 50);
+            } else {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            playing = false;
+            startBtn.disabled = false;
+            ctx.clearRect(0, 0, 640, 480);
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#333';
+            ctx.fillText(`游戏结束！命中: ${hits} 失误: ${misses}`, 160, 220);
+        }
+
+        canvas.addEventListener('mousemove', function(e) {
+            if (!playing) return;
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        canvas.addEventListener('touchmove', function(e) {
+            if (!playing) return;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            mouse.x = touch.clientX - rect.left;
+            mouse.y = touch.clientY - rect.top;
+        });
+
+        startBtn.onclick = function() {
+            hits = 0; misses = 0;
+            playing = true;
+            startBtn.disabled = true;
+            startTime = Date.now();
+            mouse.x = 320; mouse.y = 240;
+            randomTarget();
+            updateGame();
+        };
+    </script>
+</body>
+</html> 

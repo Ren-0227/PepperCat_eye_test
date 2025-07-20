@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>反应速度训练游戏 - 眼部健康大模型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+        .container { background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); margin-top: 40px; padding: 32px 24px 24px 24px; max-width: 400px; width: 100%; text-align: center; }
+        h1 { font-size: 2em; margin-bottom: 10px; background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #gameCanvas { background: #f7f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin: 18px 0 10px 0; display: block; margin-left: auto; margin-right: auto; }
+        .info { margin: 10px 0 18px 0; font-size: 1.1em; }
+        .btn { padding: 12px 28px; background: #667eea; color: #fff; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin: 0 8px; }
+        .btn:hover { background: #4a56a6; }
+        .result { margin-top: 18px; font-size: 1.2em; color: #2e7d32; }
+        .back-link { display: inline-block; margin-top: 18px; color: #667eea; text-decoration: underline; cursor: pointer; }
+        @media (max-width: 500px) { .container { padding: 12px 2vw; } #gameCanvas { width: 98vw; height: 98vw; max-width: 320px; max-height: 320px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>反应速度训练游戏</h1>
+        <div class="info" id="gameInfo">点击“开始游戏”后，尽快点击出现的彩色方块！</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div>
+            <button class="btn" id="startBtn">开始游戏</button>
+            <button class="btn" id="restartBtn" style="display:none;">再来一次</button>
+        </div>
+        <div class="result" id="result"></div>
+        <div class="back-link" onclick="window.location.href='/'">← 返回主页</div>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const info = document.getElementById('gameInfo');
+        const resultDiv = document.getElementById('result');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        let running = false;
+        let score = 0;
+        let round = 0;
+        let maxRounds = 15;
+        let startTime = 0;
+        let totalTime = 0;
+        let box = {x:0, y:0, size:60, color:'#f00'};
+        let colors = ['#f00','#0c0','#09f','#ff0','#f0f','#0ff','#fa0','#0af'];
+        function drawBox() {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = box.color;
+            ctx.fillRect(box.x, box.y, box.size, box.size);
+        }
+        function randomBox() {
+            box.size = 60;
+            box.x = Math.floor(Math.random()*(canvas.width-box.size));
+            box.y = Math.floor(Math.random()*(canvas.height-box.size));
+            box.color = colors[Math.floor(Math.random()*colors.length)];
+        }
+        canvas.addEventListener('click',function(e){
+            if(!running) return;
+            let rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+            if(x>=box.x && x<=box.x+box.size && y>=box.y && y<=box.y+box.size){
+                score++;
+                nextRound();
+            }
+        });
+        function nextRound(){
+            if(round>=maxRounds){ endGame(); return; }
+            round++;
+            info.textContent = `第${round}轮：请点击彩色方块`;
+            randomBox();
+            drawBox();
+        }
+        function startGame(){
+            running = true;
+            score = 0;
+            round = 0;
+            totalTime = 0;
+            resultDiv.textContent = '';
+            startBtn.style.display = 'none';
+            restartBtn.style.display = 'none';
+            startTime = Date.now();
+            nextRound();
+        }
+        function endGame(){
+            running = false;
+            totalTime = Math.round((Date.now()-startTime)/1000);
+            info.textContent = '游戏结束！';
+            resultDiv.textContent = `成绩：正确${score}次，总用时${totalTime}秒`;
+            restartBtn.style.display = 'inline-block';
+            // 可选：回传成绩到后端
+        }
+        startBtn.onclick = startGame;
+        restartBtn.onclick = startGame;
+        drawBox();
+    </script>
+</body>
+</html> 

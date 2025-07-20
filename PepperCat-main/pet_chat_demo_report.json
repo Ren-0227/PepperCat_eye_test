@@ -1,0 +1,129 @@
+{
+  "timestamp": "2025-07-20 17:59:22",
+  "total_tests": 24,
+  "passed_tests": 22,
+  "failed_tests": 2,
+  "pass_rate": 91.66666666666666,
+  "results": {
+    "基础问候": {
+      "success": true,
+      "message": "桌宠能够回应问候",
+      "details": "回应: PepperCat开心地向你打招呼：你好呀！..."
+    },
+    "状态查询": {
+      "success": true,
+      "message": "桌宠能够报告状态",
+      "details": "回应: PepperCat歪着头看着你，很感兴趣的样子..."
+    },
+    "活动检测": {
+      "success": true,
+      "message": "桌宠能够检测活动",
+      "details": "当前活动: 在使用电脑"
+    },
+    "游戏工具说明": {
+      "success": true,
+      "message": "系统提示词包含游戏工具说明",
+      "details": ""
+    },
+    "视力检测说明": {
+      "success": true,
+      "message": "系统提示词包含视力检测说明",
+      "details": ""
+    },
+    "可视化说明": {
+      "success": true,
+      "message": "系统提示词包含可视化说明",
+      "details": ""
+    },
+    "图像分析说明": {
+      "success": true,
+      "message": "系统提示词包含图像分析说明",
+      "details": ""
+    },
+    "眼部游戏工具导入": {
+      "success": false,
+      "message": "眼部游戏工具导入失败",
+      "details": "\"EyeGamesTool\" object has no field \"tkinter_thread\""
+    },
+    "视力检测工具导入": {
+      "success": false,
+      "message": "视力检测工具导入失败",
+      "details": "\"VisionTestTool\" object has no field \"tkinter_thread\""
+    },
+    "图像分析工具导入": {
+      "success": true,
+      "message": "图像分析工具导入成功",
+      "details": ""
+    },
+    "可视化工具导入": {
+      "success": true,
+      "message": "可视化工具导入成功",
+      "details": ""
+    },
+    "文件操作工具导入": {
+      "success": true,
+      "message": "文件操作工具导入成功",
+      "details": ""
+    },
+    "网络搜索工具导入": {
+      "success": true,
+      "message": "网络搜索工具导入成功",
+      "details": ""
+    },
+    "智能问答工具导入": {
+      "success": true,
+      "message": "智能问答工具导入成功",
+      "details": ""
+    },
+    "CSV文件检查": {
+      "success": true,
+      "message": "视力数据CSV文件存在",
+      "details": ""
+    },
+    "CSV读取": {
+      "success": true,
+      "message": "成功读取30行数据",
+      "details": ""
+    },
+    "数据分析": {
+      "success": true,
+      "message": "基础统计分析成功",
+      "details": ""
+    },
+    "可视化生成": {
+      "success": true,
+      "message": "视力趋势图生成成功",
+      "details": ""
+    },
+    "健康咨询-1": {
+      "success": true,
+      "message": "能够处理健康问题: 我的眼睛红肿应该怎么办",
+      "details": ""
+    },
+    "健康咨询-2": {
+      "success": true,
+      "message": "能够处理健康问题: 眼睛疲劳怎么缓解",
+      "details": ""
+    },
+    "健康咨询-3": {
+      "success": true,
+      "message": "能够处理健康问题: 视力下降怎么办",
+      "details": ""
+    },
+    "游戏启动-1": {
+      "success": true,
+      "message": "识别游戏类型: memory",
+      "details": "命令: 我想玩记忆游戏"
+    },
+    "游戏启动-2": {
+      "success": true,
+      "message": "识别游戏类型: focus",
+      "details": "命令: 启动专注力训练"
+    },
+    "游戏启动-3": {
+      "success": true,
+      "message": "识别游戏类型: reaction",
+      "details": "命令: 进行反应速度训练"
+    }
+  }
+}
