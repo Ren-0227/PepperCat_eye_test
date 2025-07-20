@@ -1,0 +1,1 @@
+Google搜索异常: HTTPSConnectionPool(host='www.google.com', port=443): Max retries exceeded with url: /search?q=%E5%8C%97%E4%BA%AC%E6%9C%80%E8%BF%91%E4%B8%80%E5%91%A8%E5%A4%A9%E6%B0%94 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000023595A82C40>, 'Connection to www.google.com timed out. (connect timeout=8)'))

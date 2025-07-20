@@ -1,6 +1,6 @@
 {
   "favorite_apps": {
-    "其他": 1
+    "其他": 3
   },
   "app_usage_time": {
     "其他": [
@@ -8,11 +8,21 @@
         "time": "17:12",
         "day": "Sunday",
         "duration": 1
+      },
+      {
+        "time": "18:30",
+        "day": "Sunday",
+        "duration": 1
+      },
+      {
+        "time": "19:38",
+        "day": "Sunday",
+        "duration": 1
       }
     ]
   },
   "daily_patterns": {
-    "Sunday_其他": 1
+    "Sunday_其他": 3
   },
   "work_hours": {
     "start": 9,
@@ -20,5 +30,5 @@
   },
   "break_times": [],
   "productivity_score": 0.5,
-  "last_learned": "2025-07-20T17:12:27.605474"
+  "last_learned": "2025-07-20T19:38:10.551477"
 }

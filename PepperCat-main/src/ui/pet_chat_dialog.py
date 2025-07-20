@@ -12,15 +12,14 @@ from src.openmanus_agent.visualize_tool import VisualizeTool
 from src.openmanus_agent.deepseek_qa import DeepseekQATool
 import re
 import base64
-from src.tools.eye_games import EyeGamesTool
-from src.tools.image_analysis import ImageAnalysisTool
-from src.tools.vision_test import VisionTestTool
 
 class PetChatDialog(QDialog):
     message_ready = pyqtSignal(str, str)  # sender, text
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        self._closed = False  # 标志对象是否已关闭
+        self.history = []  # 多轮对话历史，元素为("user", msg)或("pet", msg)
         self.setWindowTitle("智能命令 · 桌宠对话")
         self.setFixedSize(520, 540)
         self.setStyleSheet("""
@@ -65,45 +64,74 @@ class PetChatDialog(QDialog):
         self.history = []  # 用于多轮对话上下文
         self.message_ready.connect(self.append_message)
 
+    def closeEvent(self, event):
+        self._closed = True
+        super().closeEvent(event)
+
     def on_send(self):
+        if self._closed:
+            return
         user_text = self.input_line.text().strip()
         if not user_text:
             return
         self.append_message("user", user_text)
+        self.history.append(("user", user_text))  # 记录历史
         self.input_line.clear()
         self.send_btn.setEnabled(False)
         threading.Thread(target=self._run_mcp, args=(user_text,), daemon=True).start()
 
+    def build_multiturn_prompt(self, user_text):
+        # 拼接历史多轮对话+当前输入
+        prompt = ""
+        for role, msg in self.history:
+            if role == "user":
+                prompt += f"用户：{msg}\n"
+            else:
+                prompt += f"桌宠：{msg}\n"
+        prompt += f"用户：{user_text}\n"
+        prompt += "请根据以上多轮对话，输出工具调用计划。"
+        return prompt
+
     def _run_mcp(self, user_text):
-        # 在子线程中调用 asyncio 运行 MCPAgent
+        if self._closed:
+            return
+        # 用多轮对话prompt
+        prompt = self.build_multiturn_prompt(user_text)
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
-        result = loop.run_until_complete(self._call_mcp(user_text))
+        result = loop.run_until_complete(self._call_mcp(prompt))
+        if self._closed:
+            return
         self.message_ready.emit("pet", result)
         self.send_btn.setEnabled(True)
 
-    async def _call_mcp(self, user_text):
+    async def _call_mcp(self, prompt):
+        if self._closed:
+            return ""
         agent = PatchedMCPAgent()
         agent.available_tools = ToolCollection(
             WebSearchTool(), FileOpsTool(),
-            ReadFileTool(), VisualizeTool(), DeepseekQATool(),
-            EyeGamesTool(), ImageAnalysisTool(), VisionTestTool()
+            ReadFileTool(), VisualizeTool(), DeepseekQATool()
         )
         await agent.initialize()
         # 1. 让LLM输出plan
         # 构造messages和system_msgs
-        messages = [type('Msg', (), {'content': user_text})()]
+        messages = [type('Msg', (), {'content': prompt})()]
         system_msgs = [type('Msg', (), {'content': agent.system_prompt})()]
         plan = await agent.llm.ask_tool(messages, system_msgs=system_msgs)
         if hasattr(plan, 'content'):
             plan_str = plan.content
         else:
             plan_str = str(plan)
+        if self._closed:
+            return ""
         self.message_ready.emit("pet", f"📝 任务规划：<br>{plan_str.replace(chr(10), '<br>')}")
         # 2. 解析plan
         steps = self.parse_plan(plan_str)
         last_result = None
         for i, step in enumerate(steps):
+            if self._closed:
+                return ""
             tool_name = step['tool'].lower()
             args = step['args']
             tool = agent.available_tools.tool_map.get(tool_name)
@@ -116,6 +144,8 @@ class PetChatDialog(QDialog):
                     if isinstance(v, str) and '(上一步结果' in v:
                         args[k] = last_result or ''
                 result = await tool.execute(**args)
+                if self._closed:
+                    return ""
                 self.message_ready.emit("pet", f"✅ [{tool_name}] 结果：<br>{result}")
                 # 新增：如果是visualize，自动调用deepseekqa总结
                 if tool_name == "visualize":
@@ -124,17 +154,17 @@ class PetChatDialog(QDialog):
                     summary_tool = agent.available_tools.tool_map.get("deepseekqa")
                     if summary_tool and data_for_summary:
                         summary = await summary_tool.execute(data=data_for_summary, question="请用一句话总结这组数据")
+                        if self._closed:
+                            return ""
                         self.message_ready.emit("pet", f"🧠 总结：<br>{summary}")
-                # 新增：如果是image_analysis，自动调用deepseekqa生成详细报告
-                elif tool_name == "image_analysis":
-                    analysis_result = result
-                    summary_tool = agent.available_tools.tool_map.get("deepseekqa")
-                    if summary_tool:
-                        detailed_report = await summary_tool.execute(data=analysis_result, question="请基于这个眼部检测结果，生成一份详细的健康建议报告，包括预防措施、注意事项和就医建议")
-                        self.message_ready.emit("pet", f"🏥 详细健康报告：<br>{detailed_report}")
                 last_result = result
             except Exception as e:
+                if self._closed:
+                    return ""
                 self.message_ready.emit("pet", f"❌ [{tool_name}] 执行出错：{e}")
+        # 多轮对话：将AI最终回复加入history
+        if last_result:
+            self.history.append(("pet", str(last_result)))
         return last_result or "任务已完成"
 
     def parse_plan(self, plan_str):
@@ -188,20 +218,6 @@ class PetChatDialog(QDialog):
                     elif len(parts) == 1:
                         question = parts[0]
                     args = {'data': data, 'question': question}
-                elif tool == 'eyegames' or tool == 'eye_games':
-                    # 解析眼部游戏类型
-                    game_type = 'all'  # 默认启动所有游戏
-                    if '记忆' in arg_str or 'memory' in arg_str.lower():
-                        game_type = 'memory'
-                    elif '专注' in arg_str or 'focus' in arg_str.lower():
-                        game_type = 'focus'
-                    elif '反应' in arg_str or 'reaction' in arg_str.lower():
-                        game_type = 'reaction'
-                    args = {'game_type': game_type}
-                elif tool == 'image_analysis':
-                    # 解析图像分析参数
-                    parts = [x.strip() for x in arg_str.split(',', 1)]
-                    args = {'image_path': parts[0]}
                 else:
                     args = {'input': arg_str}
                 steps.append({'tool': tool, 'args': args})

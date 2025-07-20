@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-07-20 18:50:26",
+  "total_tests": 8,
+  "passed_tests": 1,
+  "failed_tests": 7,
+  "pass_rate": 12.5,
+  "results": {
+    "CSV文件读取": {
+      "status": "❌ FAIL",
+      "message": "读取失败: [Errno 2] No such file or directory: '../eyes_test.csv'",
+      "success": false
+    },
+    "数据分析": {
+      "status": "❌ FAIL",
+      "message": "无数据可分析",
+      "success": false
+    },
+    "可视化": {
+      "status": "❌ FAIL",
+      "message": "无数据可可视化",
+      "success": false
+    },
+    "高级分析": {
+      "status": "❌ FAIL",
+      "message": "无数据可分析",
+      "success": false
+    },
+    "可视化工具创建": {
+      "status": "✅ PASS",
+      "message": "可视化工具创建成功",
+      "success": true
+    },
+    "折线图生成": {
+      "status": "❌ FAIL",
+      "message": "折线图生成成功",
+      "success": false
+    },
+    "柱状图生成": {
+      "status": "❌ FAIL",
+      "message": "柱状图生成成功",
+      "success": false
+    },
+    "散点图生成": {
+      "status": "❌ FAIL",
+      "message": "散点图生成成功",
+      "success": false
+    }
+  }
+}

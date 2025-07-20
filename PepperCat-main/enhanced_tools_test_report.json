@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-07-20 18:25:46",
+  "total_tests": 17,
+  "passed_tests": 11,
+  "failed_tests": 6,
+  "pass_rate": 64.70588235294117,
+  "results": {
+    "眼部游戏工具": {
+      "status": "❌ FAIL",
+      "message": "游戏工具测试失败: maximum recursion depth exceeded",
+      "success": false
+    },
+    "视力检测工具": {
+      "status": "❌ FAIL",
+      "message": "视力检测工具测试失败: maximum recursion depth exceeded",
+      "success": false
+    },
+    "图像分析器创建": {
+      "status": "✅ PASS",
+      "message": "图像分析器创建成功",
+      "success": true
+    },
+    "健康指标": {
+      "status": "✅ PASS",
+      "message": "健康指标数量: 7",
+      "success": true
+    },
+    "模型初始化": {
+      "status": "✅ PASS",
+      "message": "检测模型已初始化",
+      "success": true
+    },
+    "图像分析": {
+      "status": "✅ PASS",
+      "message": "分析成功，检测到2个眼部区域",
+      "success": true
+    },
+    "图像分析工具": {
+      "status": "❌ FAIL",
+      "message": "图像分析工具测试失败: maximum recursion depth exceeded",
+      "success": false
+    },
+    "可视化器创建": {
+      "status": "✅ PASS",
+      "message": "数据可视化器创建成功",
+      "success": true
+    },
+    "输出目录": {
+      "status": "✅ PASS",
+      "message": "输出目录: visualization_outputs",
+      "success": true
+    },
+    "折线图生成": {
+      "status": "✅ PASS",
+      "message": "折线图生成成功: line_chart_20250720_182542.png",
+      "success": true
+    },
+    "柱状图生成": {
+      "status": "✅ PASS",
+      "message": "柱状图生成成功: bar_chart_20250720_182543.png",
+      "success": true
+    },
+    "散点图生成": {
+      "status": "✅ PASS",
+      "message": "散点图生成成功: scatter_chart_20250720_182543.png",
+      "success": true
+    },
+    "热力图生成": {
+      "status": "✅ PASS",
+      "message": "热力图生成成功: heatmap_20250720_182544.png",
+      "success": true
+    },
+    "综合分析生成": {
+      "status": "✅ PASS",
+      "message": "综合分析生成成功: comprehensive_analysis_20250720_182545.png",
+      "success": true
+    },
+    "可视化工具": {
+      "status": "❌ FAIL",
+      "message": "可视化工具测试失败: maximum recursion depth exceeded",
+      "success": false
+    },
+    "工具集成": {
+      "status": "❌ FAIL",
+      "message": "工具集成测试失败: maximum recursion depth exceeded",
+      "success": false
+    },
+    "错误处理": {
+      "status": "❌ FAIL",
+      "message": "错误处理测试失败: maximum recursion depth exceeded",
+      "success": false
+    }
+  }
+}

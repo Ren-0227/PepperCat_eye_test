@@ -1,17 +1,43 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional
 from pydantic import BaseModel, Field
+
 class BaseTool(ABC, BaseModel):
     name: str
     description: str
     parameters: Optional[dict] = None
+    
     class Config:
         arbitrary_types_allowed = True
+        extra = "allow"  # 允许额外的字段
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        # 初始化后可以添加动态属性
+        self._dynamic_attrs = {}
+    
+    def __setattr__(self, name, value):
+        """支持动态属性设置"""
+        if name in ['_dynamic_attrs'] or name in self.__fields__:
+            super().__setattr__(name, value)
+        else:
+            if not hasattr(self, '_dynamic_attrs'):
+                self._dynamic_attrs = {}
+            self._dynamic_attrs[name] = value
+    
+    def __getattr__(self, name):
+        """支持动态属性获取"""
+        if hasattr(self, '_dynamic_attrs') and name in self._dynamic_attrs:
+            return self._dynamic_attrs[name]
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
+    
     async def __call__(self, **kwargs) -> Any:
         return await self.execute(**kwargs)
+    
     @abstractmethod
     async def execute(self, **kwargs) -> Any:
         pass
+    
     def to_param(self) -> Dict:
         return {
             "type": "function",

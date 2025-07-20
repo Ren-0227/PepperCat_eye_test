@@ -443,8 +443,8 @@ class ImageAnalysisTool(BaseTool):
         "required": ["image_path"]
     }
     
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.analyzer = EyeImageAnalyzer()
     
     async def execute(self, image_path: str, **kwargs) -> str:
@@ -472,7 +472,7 @@ class ImageAnalysisTool(BaseTool):
     
     def cleanup(self):
         """清理资源"""
-        if self.analyzer:
+        if hasattr(self, 'analyzer') and self.analyzer:
             self.analyzer.cleanup()
 
 

@@ -229,6 +229,7 @@ class PetWidget(QWidget):
         event.accept()
     
     def mouseDoubleClickEvent(self, event):
+        # 修正：区分左右键双击
         self.doubleClicked.emit(event)
         super().mouseDoubleClickEvent(event)
     

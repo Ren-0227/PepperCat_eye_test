@@ -20,12 +20,16 @@ from src.ui.pet_widget import PetWidget
 from src.ui.upgrade_machine import UpgradeMachine
 from src.ui.bubble_menu import BubbleMenu
 from src.ui.ai_command_dialog import AICommandDialog
+from src.tools.eye_games import EyeGamesTool
+from src.tools.vision_test import VisionTestTool
+import asyncio
 
 class MainWindow(QMainWindow):
     """主窗口类"""
     
     def __init__(self):
         super().__init__()
+        self.bubble_menu = BubbleMenu(self)  # 必须最早初始化，且只初始化一次
         self.pet_agent = PetAgent("PepperCat")
         self.upgrade_machine_widget = None  # 升级机器窗口实例
         self.upgrade_machine_visible = False
@@ -115,6 +119,12 @@ class MainWindow(QMainWindow):
         self.pet_widget.doubleClicked.connect(self.on_pet_double_clicked)
         self.pet_widget.dragged.connect(self.move)
         self.pet_widget.dragged_global.connect(self.on_pet_dragged_global)
+        self.pet_widget.setGeometry(100, 100, 200, 300)
+        self.pet_widget.show()
+        self.pet_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.pet_widget.customContextMenuRequested.connect(self.show_bubble_menu)
+        self.pet_widget.mouseDoubleClickEvent = self.on_pet_double_clicked
+        self.follow_mouse_enabled = False
 
     def resizeEvent(self, event):
         super().resizeEvent(event)
@@ -413,12 +423,12 @@ class MainWindow(QMainWindow):
         self.add_info_message("🤖 桌宠已应用强化学习模型，行为更加智能！") 
 
     def on_pet_double_clicked(self, event):
-        # 右键点击直接切换跟随状态
+        # 修正：右键双击直接停止跟随
         if event.button() == Qt.MouseButton.RightButton:
-            self.toggle_follow_mouse()
+            self.follow_mouse_enabled = False
+            self.follow_timer.stop()
             return
-            
-        # 左键双击弹出气泡菜单
+        # 弹出气泡菜单
         if hasattr(self, 'bubble_menu') and self.bubble_menu.isVisible():
             self.bubble_menu.hide_with_animation()
             return
@@ -426,7 +436,12 @@ class MainWindow(QMainWindow):
         activity_info = f"窗口: {window_title}"
         from PyQt6.QtWidgets import QApplication
         from src.ui.ai_command_dialog import AICommandDialog
-        
+        def toggle_follow_mouse():
+            self.follow_mouse_enabled = not self.follow_mouse_enabled
+            if self.follow_mouse_enabled:
+                self.follow_timer.start(20)  # 50fps
+            else:
+                self.follow_timer.stop()
         actions = [
             ("抚摸", self.pet_pet),
             ("喂食", self.feed_pet),
@@ -435,7 +450,7 @@ class MainWindow(QMainWindow):
             ("查看属性", self.show_pet_stats),
             ("升级", self.open_upgrade_machine),
             ("⚔️ 对战模式", self.open_battle_dialog),
-            ("🐾 跟随鼠标" + ("（已开启）" if self.follow_mouse_enabled else ""), self.toggle_follow_mouse),
+            ("🐾 跟随鼠标" + ("（已开启）" if self.follow_mouse_enabled else ""), toggle_follow_mouse),
             ("🤖 智能命令", lambda: AICommandDialog(self).exec()),
             ("❌ 退出", lambda: QApplication.instance().quit() if QApplication.instance() is not None else None)
         ]
@@ -445,52 +460,7 @@ class MainWindow(QMainWindow):
         pet_center = self.pet_widget.mapToGlobal(self.pet_widget.rect().center())
         menu_x = pet_center.x() + 60
         menu_y = pet_center.y() - 40
-        self.bubble_menu.show_at(QPoint(menu_x, menu_y))
-    
-    def toggle_follow_mouse(self):
-        """切换跟随鼠标状态"""
-        self.follow_mouse_enabled = not self.follow_mouse_enabled
-        if self.follow_mouse_enabled:
-            self.follow_timer.start(20)  # 50fps
-            # 显示跟随状态提示
-            self.show_follow_status("跟随已开启")
-        else:
-            self.follow_timer.stop()
-            # 显示跟随状态提示
-            self.show_follow_status("跟随已关闭")
-    
-    def show_follow_status(self, message):
-        """显示跟随状态提示"""
-        from PyQt6.QtWidgets import QLabel
-        from PyQt6.QtCore import QTimer
-        
-        # 创建状态提示标签
-        status_label = QLabel(message, self)
-        status_label.setStyleSheet("""
-            QLabel {
-                background-color: rgba(0, 0, 0, 0.7);
-                color: white;
-                padding: 8px 16px;
-                border-radius: 16px;
-                font-size: 14px;
-                font-weight: bold;
-            }
-        """)
-        status_label.adjustSize()
-        
-        # 定位到桌宠中心上方
-        pet_center = self.pet_widget.mapToGlobal(self.pet_widget.rect().center())
-        local_center = self.mapFromGlobal(pet_center)
-        status_label.move(local_center.x() - status_label.width() // 2, 
-                         local_center.y() - status_label.height() - 60)
-        
-        status_label.show()
-        
-        # 2秒后自动隐藏
-        timer = QTimer(self)
-        timer.timeout.connect(status_label.deleteLater)
-        timer.timeout.connect(timer.deleteLater)
-        timer.start(2000)
+        self.bubble_menu.show_at(QPoint(menu_x, menu_y)) 
 
     def toggle_upgrade_machine_widget(self):
         if self.upgrade_machine_widget is None:
@@ -664,3 +634,36 @@ class MainWindow(QMainWindow):
         if hasattr(self, 'pet_widget') and self.pet_widget.isVisible():
             self.pet_widget.handle_key_event(key)
         super().keyPressEvent(event) 
+
+    def show_bubble_menu(self, pos):
+        global_pos = self.pet_widget.mapToGlobal(pos)
+        self.bubble_menu.move(global_pos)
+        self.bubble_menu.show()
+        # 动态添加“跟随/停止跟随”按钮
+        from PyQt6.QtWidgets import QPushButton
+        if not hasattr(self.bubble_menu, 'btn_toggle_follow'):
+            self.bubble_menu.btn_toggle_follow = QPushButton(self.bubble_menu)
+            self.bubble_menu.layout().addWidget(self.bubble_menu.btn_toggle_follow)
+            self.bubble_menu.btn_toggle_follow.clicked.connect(self.toggle_follow_mouse)
+        if self.follow_mouse_enabled:
+            self.bubble_menu.btn_toggle_follow.setText("停止跟随")
+        else:
+            self.bubble_menu.btn_toggle_follow.setText("开始跟随")
+        self.bubble_menu.btn_toggle_follow.setVisible(True)
+
+    def toggle_follow_mouse(self):
+        self.follow_mouse_enabled = not self.follow_mouse_enabled
+        if self.follow_mouse_enabled:
+            print("桌宠已开始跟随鼠标")
+        else:
+            print("桌宠已停止跟随鼠标") 
+
+    def open_eye_games(self):
+        """健康游戏入口"""
+        tool = EyeGamesTool()
+        asyncio.get_event_loop().run_in_executor(None, lambda: asyncio.run(tool.execute(game_type="all")))
+
+    def open_vision_test(self):
+        """视力检测入口"""
+        tool = VisionTestTool()
+        asyncio.get_event_loop().run_in_executor(None, lambda: asyncio.run(tool.execute())) 
