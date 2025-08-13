@@ -169,14 +169,8 @@ ollama serve
 
 ---
 
-## 📄 许可证
-MIT License
-
----
-
 ## 🙏 致谢
 - OpenManus/DeepSeek/Ollama团队
-- 所有开源贡献者
 
 ---
 
